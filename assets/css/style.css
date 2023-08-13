@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 800px;
+  background-color: #ececec;
+  font-family: "Noto Sans Mono", monospace;
+  color: #00008b;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  outline: 3px solid #00008b;
+}
+
+h1::before,
+h2::before {
+  content: "❯ ";
+}
+
+h1::after,
+h2::after {
+  content: "_";
+}
+
+.subheading {
+  font-size: 1.5rem;
+}
+
+a:link {
+  padding-left: .125rem;
+  padding-right: .125rem;
+  text-decoration: none;
+  color: #00008b;
+}
+
+a:hover,
+a:focus {
+  outline: 2px solid #d74008;
+  color: #d74008;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.responsibilities li::before {
+  content: "— ";
+}
+
+.avatar {
+  width: 16rem;
+  border-radius: 100%;
+}
+
+.title::after {
+  content: "_";
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.red {
+  color: #d74008;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.row ul {
+  width: 24rem;
+}
+
+.button-primary {
+  background-color: #00008b;
+  border: none;
+  color: #ececec;
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 120px;
+  height: 40px;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #d74008;
+  color: #d74008;
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 120px;
+  height: 40px;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+}
+
+nav .item:last-child {
+  width: 33%;
+}
+
+nav .item {
+  padding: 0px;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+section:nth-of-type(2n) .item:first-child {
+  width: 62%;
+}
+
+section:nth-of-type(2n) .item:last-child {
+  width: 36.5%;
+}
+
+section:nth-of-type(2n + 1) .item:first-child {
+  width: 36.5%;
+}
+
+section:nth-of-type(2n + 1) .item:last-child {
+  width: 62%;
+}
+
+section:last-child .item:first-child {
+  width: 62%;
+}
+
+section:last-child .item:last-child {
+  width: 36.5%;
+}
+
+.item {
+  padding: 25px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+}
+
+.skills-icon {
+  filter: invert(4%) sepia(59%) saturate(7300%) hue-rotate(243deg)
+    brightness(168%) contrast(128%);
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon {
+  filter: invert(4%) sepia(59%) saturate(7300%) hue-rotate(243deg)
+    brightness(168%) contrast(128%);
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.icon:hover,
+.icon:focus {
+  filter: invert(23%) sepia(45%) saturate(5212%) hue-rotate(15deg)
+    brightness(101%) contrast(94%);
+}
+
+label {
+  display: block;
+  margin-top: .5rem;
+}
+
+input {
+  margin-bottom: .5rem;
+}
+
+input,
+textarea {
+  padding: 4px;
+  border: 2px solid #00008b;
+  width: 100%;
+  background-color: transparent;
+}
+
+textarea {
+  margin-bottom: 1rem;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  outline: none;
+  border: 2px solid #d74008;
+}
+
+.social-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.social-link p {
+  margin: auto 1rem;
+}
+
+/* Mobile */
+@media only screen and (max-device-width: 30rem) {
+  body {
+    margin: .875rem;
+    width: 30rem;
+  }
+}
