@@ -12,8 +12,8 @@ body {
 }
 
 h1 {
-  padding-left: .25rem;
-  padding-right: .25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   outline: 3px solid #00008b;
 }
 
@@ -32,8 +32,8 @@ h2::after {
 }
 
 a:link {
-  padding-left: .125rem;
-  padding-right: .125rem;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
   text-decoration: none;
   color: #00008b;
 }
@@ -76,6 +76,10 @@ ul.responsibilities li::before {
 
 .row ul {
   width: 24rem;
+}
+
+.ta-right {
+  text-align: right;
 }
 
 .button-primary {
@@ -123,6 +127,7 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 25px;
 }
 
 section:last-child {
@@ -132,7 +137,15 @@ section:last-child {
   align-items: start;
 }
 
-section:nth-of-type(2n) .item:first-child {
+section .item:first-child {
+  width: 62%;
+}
+
+section .item:last-child {
+  width: 36.5%;
+}
+
+/* section:nth-of-type(2n) .item:first-child {
   width: 62%;
 }
 
@@ -146,6 +159,14 @@ section:nth-of-type(2n + 1) .item:first-child {
 
 section:nth-of-type(2n + 1) .item:last-child {
   width: 62%;
+} */
+
+section:first-child .item:first-child {
+  width: 36.5%;
+}
+
+section:first-child .item:last-child {
+  width: 62%;
 }
 
 section:last-child .item:first-child {
@@ -156,8 +177,12 @@ section:last-child .item:last-child {
   width: 36.5%;
 }
 
-.item {
-  padding: 25px;
+.item:first-child {
+  padding-right: 25px;
+}
+
+.item:last-child {
+  padding-left: 25px;
 }
 
 .skills {
@@ -190,11 +215,11 @@ section:last-child .item:last-child {
 
 label {
   display: block;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 input {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 input,
@@ -232,7 +257,53 @@ textarea:focus {
 /* Mobile */
 @media only screen and (max-device-width: 30rem) {
   body {
-    margin: .875rem;
+    margin: 0.875rem;
     width: 30rem;
   }
+}
+
+/* CSS vertical line/bar */
+.progress {
+  text-align: center;
+}
+
+.progress .circle,
+.progress .bar {
+  display: block;
+  background: #00008b;
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+}
+
+.progress .bar {
+  position: relative;
+  width: 12px;
+  height: 80px;
+  margin: -1px 0 0 26px;
+  border-radius: 0;
+  top: 0;
+  vertical-align: top;
+  left: 0;
+}
+
+.progress .circle .label {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  line-height: 60px;
+  border-radius: 64px;
+  color: #ececec;
+  font-size: 17px;
+}
+
+.progress .circle .title {
+  color: #00008b;
+  font-size: 13px;
+  line-height: 18px;
+  padding-left: 55px;
+  display: block;
+  width: calc(100vw - 130px);
+  margin-top: -25px;
+  text-align: left;
 }
