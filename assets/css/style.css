@@ -3,12 +3,11 @@
 }
 
 body {
-  width: 800px;
+  width: 50rem;
   background-color: #ececec;
   font-family: "Noto Sans Mono", monospace;
   color: #00008b;
   max-width: 800px;
-  margin: auto;
 }
 
 h1 {
@@ -63,7 +62,7 @@ ul.responsibilities li::before {
   animation: blink-caret 0.75s step-end infinite;
 }
 
-.red {
+.red-text {
   color: #d74008;
 }
 
@@ -76,10 +75,6 @@ ul.responsibilities li::before {
 
 .row ul {
   width: 24rem;
-}
-
-.ta-right {
-  text-align: right;
 }
 
 .button-primary {
@@ -122,72 +117,9 @@ nav .item {
   padding: 0px;
 }
 
-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px;
-}
-
-section:last-child {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-}
-
-section .item:first-child {
-  width: 62%;
-}
-
-section .item:last-child {
-  width: 36.5%;
-}
-
-/* section:nth-of-type(2n) .item:first-child {
-  width: 62%;
-}
-
-section:nth-of-type(2n) .item:last-child {
-  width: 36.5%;
-}
-
-section:nth-of-type(2n + 1) .item:first-child {
-  width: 36.5%;
-}
-
-section:nth-of-type(2n + 1) .item:last-child {
-  width: 62%;
-} */
-
-section:first-child .item:first-child {
-  width: 36.5%;
-}
-
-section:first-child .item:last-child {
-  width: 62%;
-}
-
-section:last-child .item:first-child {
-  width: 62%;
-}
-
-section:last-child .item:last-child {
-  width: 36.5%;
-}
-
-.item:first-child {
-  padding-right: 25px;
-}
-
-.item:last-child {
-  padding-left: 25px;
-}
-
 .skills {
   display: flex;
-  flex-wrap: row;
+  flex-flow: row;
   justify-content: space-between;
   align-content: center;
   text-align: center;
@@ -254,56 +186,173 @@ textarea:focus {
   margin: auto 1rem;
 }
 
-/* Mobile */
-@media only screen and (max-device-width: 30rem) {
+/* Greater than 1280px */
+@media (width >= 80em) {
   body {
-    margin: 0.875rem;
-    width: 30rem;
+    margin: 2rem auto 6rem auto;
+  }
+
+  .item:first-child {
+    padding-right: 1.5rem;
+  }
+
+  .item:last-child {
+    padding-left: 1.5rem;
+  }
+
+  section {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  section:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  section .item:first-child {
+    width: 62%;
+  }
+
+  section .item:last-child {
+    width: 36.5%;
+  }
+
+  section:first-child .item:first-child {
+    width: 36.5%;
+  }
+
+  section:first-child .item:last-child {
+    width: 62%;
+  }
+
+  section:last-child .item:first-child {
+    width: 62%;
+  }
+
+  section:last-child .item:last-child {
+    width: 36.5%;
+  }
+
+  .progress {
+    text-align: center;
+  }
+
+  .progress .circle,
+  .progress .bar {
+    display: block;
+    background: #00008b;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+  }
+
+  .progress .bar {
+    position: relative;
+    width: 12px;
+    height: 100px;
+    margin-left: 26px;
+    border-radius: 0;
+  }
+
+  .progress .bar:first-child {
+    margin-top: -51px;
+  }
+
+  .progress .bar:last-child {
+    margin-bottom: -51px;
+  }
+
+  .progress .circle .label {
+    display: inline-block;
+    line-height: 60px;
+    color: #ececec;
+    font-size: 17px;
+  }
+
+  .progress .circle .title {
+    color: #00008b;
+    font-size: 13px;
+    line-height: 18px;
+    padding-left: 55px;
+    display: block;
+    width: calc(100vw - 130px);
+    margin-top: -25px;
+    text-align: left;
+  }
+
+  .ta-right {
+    text-align: right;
   }
 }
 
-/* CSS vertical line/bar */
-.progress {
-  text-align: center;
-}
+/* Less than 1280px */
+@media (width <= 80em) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
-.progress .circle,
-.progress .bar {
-  display: block;
-  background: #00008b;
-  width: 64px;
-  height: 64px;
-  border-radius: 64px;
-}
+  body {
+    position: relative;
+    width: 100%;
+    padding: 0.875rem;
+    margin: 1rem auto 2rem auto;
+  }
 
-.progress .bar {
-  position: relative;
-  width: 12px;
-  height: 80px;
-  margin: -1px 0 0 26px;
-  border-radius: 0;
-  top: 0;
-  vertical-align: top;
-  left: 0;
-}
+  .row {
+    display: flex;
+    flex-flow: column;
+  }
 
-.progress .circle .label {
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  line-height: 60px;
-  border-radius: 64px;
-  color: #ececec;
-  font-size: 17px;
-}
+  .row li {
+    padding-bottom: 0.875rem;
+  }
 
-.progress .circle .title {
-  color: #00008b;
-  font-size: 13px;
-  line-height: 18px;
-  padding-left: 55px;
-  display: block;
-  width: calc(100vw - 130px);
-  margin-top: -25px;
-  text-align: left;
+  section {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0 0 1rem 0;
+  }
+
+  section:first-child {
+    align-items: center;
+  }
+
+  section:last-child .item:first-child {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  section:last-child .item:last-child {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  section .item:has(.progress) {
+    display: none;
+  }
+
+  .skills {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: center;
+    text-align: left;
+  }
+
+  .skills li {
+    padding: 0.875rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-content: center;
+  }
 }
